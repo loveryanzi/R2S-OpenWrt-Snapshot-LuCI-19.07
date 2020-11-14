@@ -42,7 +42,7 @@ jobs:
         
     - name: Clone Nick's Repo & Replace Files
       run: |
-        git clone https://github.com/nicksun98/R2S-OpenWrt.git
+        git clone https://github.com/loveryanzi/R2S-OpenWrt.git
         rm -rf ./R2S-OpenWrt/SEED/*
         mv ./SEED/* ./R2S-OpenWrt/SEED/
         mv ./SCRIPTS/* ./R2S-OpenWrt/SCRIPTS/
