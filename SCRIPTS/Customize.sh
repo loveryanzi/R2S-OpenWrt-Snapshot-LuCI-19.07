@@ -32,21 +32,16 @@ bash modifySSRPlus.sh
 popd
 
 # luci-app-clash
-# git clone https://github.com/frainzy1477/luci-app-clash.git package/luci-app-clash
-# pushd package/luci-app-clash
-# cp $MY_PATH/../PATCH/change-default-address-secret-for-clash-dashboard.patch ./
-# patch -p1 < 0001-change-default-address-secret-for-clash-dashboard.patch
-# popd
-# pushd package/luci-app-clash/po/zh-cn
-# sed -i 's/谷歌网/Google/' clash.po
-# sed -i 's/百度网/Baidu/' clash.po
-# sed -i 's/国内网IP/国内IP/' clash.po
-# sed -i 's/国外网IP/国外IP/' clash.po
-# popd
-# pushd package/luci-app-clash/tools/po2lmo
-# make && sudo make install
-# popd
-# po2lmo ./package/luci-app-clash/po/zh-cn/clash.po ./package/luci-app-clash/po/zh-cn/clash.zh-cn.lmo
+git clone https://github.com/frainzy1477/luci-app-clash.git package/luci-app-clash
+pushd package/luci-app-clash
+cp $MY_PATH/../PATCH/change-default-address-secret-for-clash-dashboard.patch ./
+patch -p1 < 0001-change-default-address-secret-for-clash-dashboard.patch
+popd
+
+pushd package/luci-app-clash/tools/po2lmo
+make && sudo make install
+popd
+po2lmo ./package/luci-app-clash/po/zh-cn/clash.po ./package/luci-app-clash/po/zh-cn/clash.zh-cn.lmo
 
 #翻译及部分功能优化
 MY_Var=package/lean/lean-translate
