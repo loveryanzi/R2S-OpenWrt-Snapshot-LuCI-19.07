@@ -4,13 +4,6 @@ on:
   push:
     branches: 
       - master
-    paths:
-      - '.github/workflows/**'
-      - 'PATCH/**'
-      - 'SCRIPTS/**'
-      - 'SEED/**'
-  watch:
-    types: [started]
 
 jobs:
   build:
@@ -74,11 +67,6 @@ jobs:
       run: |
         cd ./openwrt
         /bin/bash 03_convert_translation.sh
-
-    - name: Remove Upx
-      run: |
-        cd ./openwrt
-        /bin/bash 04_remove_upx.sh
 
     - name: Add ACL
       run: |
